@@ -1,11 +1,13 @@
+package model;
+
 //package .java_web_aranoua.model;
 public class Pessoa {
     private int id;
     private String nome;
-    private double telefone;
+    private String telefone;
     private String email;
     
-    public Pessoa(int id, String nome, double telefone, String email){
+    public Pessoa(int id, String nome, String telefone, String email){
         this.id = id;
         this.nome = "nome";
         this.telefone = telefone;
@@ -23,10 +25,10 @@ public class Pessoa {
     public void setNome(String nome){
         this.nome = nome;
     }
-    public double getTelefone(){
+    public String getTelefone(){
         return telefone;
     }
-    public void setTelefone(double telefone){
+    public void setTelefone(String telefone){
         this.telefone = telefone;
     }
     public String getEmail(){
