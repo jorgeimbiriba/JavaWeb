@@ -1,0 +1,37 @@
+/* Padrao ANSI SQL */
+/* DDL-Data Definition Language */
+
+show databases;
+
+create database aranoua_java_web;
+
+use aranoua_java_web;
+show tables;
+create table pessoa(
+id int auto_increment primary key,
+nome varchar(255) not null,
+email varchar(255) not null unique
+);
+
+/* DML- Manipulação */
+
+-- inserir
+insert into pessoa
+(nome,email)
+values
+('Carlos','carlos@ifam.edu.br');
+
+-- listar
+select id,nome,email from pessoa;
+
+-- alterar
+update pessoa
+set nome = 'João'
+where id = 1;
+
+-- deletar
+delete from pessoa
+where id = 1;
+
+-- deletar table
+drop table;
