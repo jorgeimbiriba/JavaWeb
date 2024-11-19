@@ -1,62 +1,67 @@
 import model.Pessoa;
+import util.ConexaoUtil;
 
 import java.sql.*;
 
 public class TestaConexaoBD {
 
+
     public static void main(String[] args) {
-//        jdbc:mysql://localhost:3306//aranoua_java_web == Onde esta instalado o BD
-        String url = "jdbc:mysql://localhost:3306/aranoua_java_web";
-        String usuario = "root"; //user do BD que será feita a conexao
-        String senha = "root"; //senha do BD que será feita a conexao
+
+//        http://ifam.edu.br/paginas/...
+//        jdbc:mysql://localhost:3306/aranoua_java_web
+
+
         try {
-        Pessoa pessoa = new Pessoa(05,"model.Pessoa 02","92993791610","pessoa02@ifam.edu.br");
-            Connection conexao = DriverManager.getConnection(url, usuario, senha);
-            System.out.println("Conexão realizada!");//Para mostrar que deu certo
+
+            Pessoa pessoa = new Pessoa(7,"model.Pessoa 05","pessoa05@ifam.edu.br");
+
+
+            ConexaoUtil conexaoUtil = new ConexaoUtil();
+            Connection conexao = conexaoUtil.getConexao();
+
+            System.out.println("Conexão realizada!");
 
             Statement instrucao = conexao.createStatement();
+
             String sqlInserir = "insert into pessoa" +
-                    " (nome,telefone,email)" +
-                    " values" +
-                    " ('"+pessoa.getNome()+"',"+pessoa.getTelefone()+",'"+pessoa.getEmail()+"')";
-            System.out.println(sqlInserir);
-            //Insere a model.Pessoa
-            // System.out.println("SQL:"+sqlInserir);
-            // boolean resultado = instrucao.execute(sqlInserir);
+                         " (nome,email)" +
+                         " values" +
+                         " ('"+pessoa.getNome()+"','"+pessoa.getEmail()+"')";
 
-            String sqlAlterar = "update pessoa" +
+            System.out.println("SQL:"+sqlInserir);
+
+            String sqlAlterar = "update pessoa " +
                     " set nome = '"+pessoa.getNome()+"'"+
-                    " where id = "+pessoa.getId(); //Modifica o campo informado
-            // System.out.println("SQL:"+sqlAlterar);
-            // boolean resultado = instrucao.execute(sqlAlterar);
+                    " where id = "+pessoa.getId();
 
-            String sqlDeletar = "delete from pessoa" +
-                    " where id = 1"; //Deleta a pessoa no id especificado
+            System.out.println("SQL:"+sqlAlterar);
 
-            //System.out.println("SQL:"+sqlDeletar);
-            //boolean resultado = instrucao.execute(sqlDeletar);
+            String sqlListar = "select id,nome,email from pessoa";
 
-            String sqlListar = "select id,nome,telefone,email from pessoa";
             System.out.println("SQL:"+sqlListar);
-            boolean resultado = instrucao.execute(sqlListar);
+
+            boolean resultado = instrucao.execute(sqlAlterar);
+
             if(resultado){
                 ResultSet resultados = instrucao.getResultSet();
                 while(resultados.next()){
                     System.out.println("ID:"+resultados.getInt(1));
                     System.out.println("NOME:"+resultados.getString(2));
-                    System.out.println("TELEFONE:"+resultados.getDouble(3));
-                    System.out.println("EMAIL:"+resultados.getString(4));
-                    System.out.println("*******************************************");
+                    System.out.println("EMAIL:"+resultados.getString(3));
+                    System.out.println("******************************************");
                 }
             }
-
             System.out.println("Instrução realizada com sucesso!");
 
-            //System.out.println("Resultado:"+resultado);
-
-        }catch(SQLException exececao){
-            System.out.println("Erro:"+ exececao.getMessage()); //Para mostrar que deu erro
+        }catch(SQLException excecao){
+            System.out.println("Erro:"+ excecao.getMessage());
         }
-        System.out.println("Progama finalizado"); //Para mostrar que o programa finalizou
+
+        System.out.println("Programa finalizado!");
+
+
     }
+
+
 }
