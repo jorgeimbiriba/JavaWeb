@@ -60,11 +60,6 @@ public class TestaConexaoBDComDAO {
         }catch(SQLException e){
             System.out.println("Erro:"+e.getMessage());
         }
-
-
-
-
-
     }
 
 }
