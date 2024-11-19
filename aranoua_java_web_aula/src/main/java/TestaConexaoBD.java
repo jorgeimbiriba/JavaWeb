@@ -8,8 +8,8 @@ public class TestaConexaoBD {
 
     public static void main(String[] args) {
 
-//        http://ifam.edu.br/paginas/...
-//        jdbc:mysql://localhost:3306/aranoua_java_web
+
+          //jdbc:mysql://localhost:3306/aranoua_java_web
 
 
         try {
