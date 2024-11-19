@@ -8,10 +8,7 @@ public class TestaConexaoBD {
 
     public static void main(String[] args) {
 
-
           //jdbc:mysql://localhost:3306/aranoua_java_web
-
-
         try {
 
             Pessoa pessoa = new Pessoa(7,"model.Pessoa 05","pessoa05@ifam.edu.br");
@@ -59,9 +56,5 @@ public class TestaConexaoBD {
         }
 
         System.out.println("Programa finalizado!");
-
-
     }
-
-
 }
