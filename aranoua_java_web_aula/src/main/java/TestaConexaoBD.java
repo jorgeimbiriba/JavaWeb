@@ -4,13 +4,10 @@ import util.ConexaoUtil;
 import java.sql.*;
 
 public class TestaConexaoBD {
-
-
     public static void main(String[] args) {
 
           //jdbc:mysql://localhost:3306/aranoua_java_web
         try {
-
             Pessoa pessoa = new Pessoa(7,"model.Pessoa 05","pessoa05@ifam.edu.br");
 
 
@@ -54,7 +51,6 @@ public class TestaConexaoBD {
         }catch(SQLException excecao){
             System.out.println("Erro:"+ excecao.getMessage());
         }
-
         System.out.println("Programa finalizado!");
     }
 }

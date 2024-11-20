@@ -10,7 +10,7 @@ public class ConexaoUtil {
     private String usuario;
     private String senha;
 
-
+    //jdbc:mysql://127.0.0.1:3306/?user=root
     public ConexaoUtil() {
         this.url = "jdbc:mysql://localhost:3306/aranoua_java_web";
         this.usuario = "root";

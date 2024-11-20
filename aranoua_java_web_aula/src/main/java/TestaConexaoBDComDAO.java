@@ -8,7 +8,6 @@ public class TestaConexaoBDComDAO {
 
     public static void main(String[] args) {
 
-
         try {
 
             PessoaDAO pessoaDAO = new PessoaDAO();
