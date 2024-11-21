@@ -13,7 +13,7 @@ public class TestaConexaoBDComDAO {
             PessoaDAO pessoaDAO = new PessoaDAO();
 
             // Inserir com o DAO
-
+//
 //            Pessoa pessoa = new Pessoa("Pessoa 08", "pessoa08@ifam.edu.br");
 //
 //            pessoaDAO.inserir(pessoa);
@@ -21,7 +21,7 @@ public class TestaConexaoBDComDAO {
 //            System.out.println("Inserido com sucesso!");
 
             // Alterar com o DAO
-
+//
 //            Pessoa pessoa = new Pessoa(8,"Pessoa 08 Alterado", "pessoa08alterado@ifam.edu.br");
 //
 //            pessoaDAO.alterar(pessoa);
@@ -33,28 +33,28 @@ public class TestaConexaoBDComDAO {
 //            pessoaDAO.excluir(6L);
 //            System.out.println("Excluído com sucesso!");
 
-            // Listar com o DAO
+             //Listar com o DAO
 
-//            List<Pessoa> pessoas = pessoaDAO.listar();
-//
-//            for(Pessoa pessoa:pessoas){
-//                System.out.println("Id:"+pessoa.getId());
-//                System.out.println("Nome:"+pessoa.getNome());
-//                System.out.println("E-mail:"+pessoa.getEmail());
-//                System.out.println("*****************************");
-//            }
-//
-//            System.out.println("Listado com sucesso!");
-//
+            List<Pessoa> pessoas = pessoaDAO.listar();
+
+            for(Pessoa pessoa:pessoas){
+                System.out.println("Id:"+pessoa.getId());
+                System.out.println("Nome:"+pessoa.getNome());
+                System.out.println("E-mail:"+pessoa.getEmail());
+                System.out.println("*****************************");
+            }
+
+            System.out.println("Listado com sucesso!");
+
             //Consultar com o DAO
 
-            Pessoa pessoa = pessoaDAO.consultar(5L);
-            System.out.println("Id:"+pessoa.getId());
-            System.out.println("Nome:"+pessoa.getNome());
-            System.out.println("E-mail:"+pessoa.getEmail());
-            System.out.println("*****************************");
-
-            System.out.println("Consultado com sucesso!");
+//            Pessoa pessoa = pessoaDAO.consultar(5L);
+//            System.out.println("Id:"+pessoa.getId());
+//            System.out.println("Nome:"+pessoa.getNome());
+//            System.out.println("E-mail:"+pessoa.getEmail());
+//            System.out.println("*****************************");
+//
+//            System.out.println("Consultado com sucesso!");
 
         }catch(SQLException e){
             System.out.println("Erro:"+e.getMessage());
