@@ -37,14 +37,14 @@ public class TestaConexaoBDComDAO {
 
             List<Pessoa> pessoas = pessoaDAO.listar();
 
-            for(Pessoa pessoa:pessoas){
-                System.out.println("Id:"+pessoa.getId());
-                System.out.println("Nome:"+pessoa.getNome());
-                System.out.println("E-mail:"+pessoa.getEmail());
-                System.out.println("*****************************");
-            }
-
-            System.out.println("Listado com sucesso!");
+//            for(Pessoa pessoa:pessoas){
+//                System.out.println("Id:"+pessoa.getId());
+//                System.out.println("Nome:"+pessoa.getNome());
+//                System.out.println("E-mail:"+pessoa.getEmail());
+//                System.out.println("*****************************");
+//            }
+//
+//            System.out.println("Listado com sucesso!");
 
             //Consultar com o DAO
 
